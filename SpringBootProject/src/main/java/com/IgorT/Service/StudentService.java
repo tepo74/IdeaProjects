@@ -3,6 +3,7 @@ package com.IgorT.Service;
 import com.IgorT.Dao.StudentDao;
 import com.IgorT.Entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -10,7 +11,9 @@ import java.util.Collection;
 @Service
 public class StudentService {
     @Autowired
-    private  StudentDao studentDao;
+    //@Qualifier("fakeData")
+    @Qualifier("mysqlData")
+    private StudentDao studentDao;
 
     public Collection<Student> getAllStudents()
     {
