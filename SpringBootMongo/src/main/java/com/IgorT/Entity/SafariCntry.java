@@ -17,6 +17,7 @@ public class SafariCntry {
     @Column
     private Integer ordNo;
 
+
     public SafariCntry(String name) {
         this.name = name;
     }
