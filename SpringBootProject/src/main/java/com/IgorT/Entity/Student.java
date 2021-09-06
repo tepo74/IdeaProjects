@@ -3,11 +3,21 @@ package com.IgorT.Entity;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@EntityScan
-public class Student {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@EntityScan
+@Entity
+@Table(name="students")
+public class Student {
+    @Id
     private int id;
+    @Column(name="name")
     private String name;
+    @Column(name="course")
     private String course;
 
     public Student() {

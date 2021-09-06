@@ -1,4 +1,5 @@
 package com.IgorT.Dao;
+
 import com.IgorT.Entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,22 +17,21 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Repository
-@Qualifier("mongoData")
-public class MongoStudentDaoImpl  implements StudentDao
+@Qualifier("mysqlDataHyb")
+public class MySqlStudentHybDaoImpl  implements StudentDao
 {
     private static  SessionFactory sf;
     private static Configuration con;
     private static ServiceRegistry reg;
     static
     {
-        con = new Configuration().configure("hibernate.cfg.xml");
-        con.addAnnotatedClass(Student.class);
-        sf = con.buildSessionFactory();
+         con = new Configuration().configure("hibernate.cfg.xml");
+         con.addAnnotatedClass(Student.class);
+         sf = con.buildSessionFactory();
 
 
     }
-    private static <T> Collection<T> loadAllData(Class<T> type, Session session)
-    {
+    private static <T> Collection<T> loadAllData(Class<T> type, Session session) {
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> criteria = builder.createQuery(type);
         criteria.from(type);
@@ -42,7 +42,7 @@ public class MongoStudentDaoImpl  implements StudentDao
     @Override
     public Collection<Student> getAllStudents()
     {
-        Session session = sf.openSession();
+        Session session = MySqlStudentHybDaoImpl.sf.openSession();
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         return loadAllData(Student.class, session);
