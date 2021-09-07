@@ -6,6 +6,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page JSP</title>
+
+
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    </style>
+
 </head>
 <body>
 
@@ -18,7 +27,7 @@
 </form>
 
 
-<table>
+<table >
   <c:forEach items="${safari_cntr}" var="cntr">
     <tr>
       <td><c:out value="${cntr.name}" /></td>
