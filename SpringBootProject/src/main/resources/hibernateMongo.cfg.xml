@@ -1,21 +1,21 @@
 <hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
     <session-factory>
+        <!--
+                   <property name="hibernate.transaction.coordinator_class">org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl</property>
 
-            <property name="hibernate.transaction.coordinator_class">org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl</property>
-
-            <property name="hibernate.ogm.datastore.provider">MONGODB</property>
-            <property name="hibernate.ogm.mongodb.database">ris</property>
-            <property name="hibernate.ogm.mongodb.host">localhost</property>
-            <property name="hibernate.ogm.mongodb.port">27017</property>
-            <property name="hibernate.search.default.directory_provider">filesystem</property>
-
-           <!--
-           <property name="hibernate.dialect">org.hibernate.dialect. </property>
-            <property name="hibernate.search.default.indexBase">./Indexes</property>
-            <property name="hibernate.search.default.locking_strategy">single</property>
-            <property name="hibernate.current_session_context_class">thread</property>
-                <mapping resource="hibernate-contact.hbm.xml"/>
-            <property name="hibernate.connection.username">ris</property>
-            <property name="hibernate.connection.password"></property>-->
+                   <property name="hibernate.ogm.datastore.provider">MONGODB</property>
+                   <property name="hibernate.ogm.mongodb.database">ris</property>
+                   <property name="hibernate.ogm.mongodb.host">localhost</property>
+                   <property name="hibernate.ogm.mongodb.port">27017</property>
+                   <property name="hibernate.search.default.directory_provider">filesystem</property>
+       -->
+                  <!--
+                  <property name="hibernate.dialect">org.hibernate.dialect. </property>
+                   <property name="hibernate.search.default.indexBase">./Indexes</property>
+                   <property name="hibernate.search.default.locking_strategy">single</property>
+                   <property name="hibernate.current_session_context_class">thread</property>
+                       <mapping resource="hibernate-contact.hbm.xml"/>
+                   <property name="hibernate.connection.username">ris</property>
+                   <property name="hibernate.connection.password"></property>-->
     </session-factory>
 </hibernate-configuration>

@@ -13,6 +13,7 @@ public class StudentController {
     @Autowired
     private  StudentService studentService;
 
+
     @RequestMapping(value= "/students", method = RequestMethod.GET )
     public Collection<Student> getAllStudents()
     {
@@ -38,5 +39,7 @@ public class StudentController {
     }
 
 
-
+    public StudentService getStudentService() {
+        return studentService;
+    }
 }

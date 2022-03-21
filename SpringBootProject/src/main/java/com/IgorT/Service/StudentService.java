@@ -12,9 +12,21 @@ import java.util.Collection;
 public class StudentService {
     @Autowired
     //@Qualifier("fakeData")
+    // @Qualifier("mongoData")
     @Qualifier("mysqlDataHyb")
-    //@Qualifier("mongoData")
     private StudentDao studentDao;
+
+
+    public static StudentService studSrv;
+
+    public StudentService() {
+        studSrv = this;
+    }
+
+    public StudentService(StudentDao studentDao) {
+        this.studentDao = studentDao;
+        studSrv = this;
+    }
 
     public Collection<Student> getAllStudents()
     {
